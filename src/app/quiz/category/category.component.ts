@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./category.component.scss']
 })
 export class CategoryComponent {
+  categories: any[] = this.CategoryService.categories;
 
+  constructor(private categoryService: CategoryService ) { }
+
+  ngOnInit(): void {
+    this.CategoryService.getQuizContent();
+  }
 }

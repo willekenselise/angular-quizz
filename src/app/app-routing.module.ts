@@ -31,10 +31,6 @@ const routes: Routes = [
   {
     path: 'category',
     component: CategoryComponent
-  },
-  {
-    path: 'category/:filter',
-    component: CategoryComponent
   }
 ];
 
