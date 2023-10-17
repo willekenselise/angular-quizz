@@ -33,10 +33,6 @@ const routes: Routes = [
     path: 'category',
     component: CategoryComponent
   },
-  {
-    path: 'category/:id',
-    component: QuestionComponent
-  }
 ];
 
 @NgModule({
