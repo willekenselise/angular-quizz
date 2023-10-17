@@ -6,6 +6,7 @@ import { HttpClient } from "@angular/common/http";
 })
 export class CategoryService {
   categories: any[] = [];
+  searchString: string = "";
 
   constructor(private http: HttpClient) { }
 
@@ -14,6 +15,10 @@ export class CategoryService {
     this.http.get('http://localhost:3000/categories').subscribe((cat: any) => {
         this.categories.push(...cat);
     });
+  }
+
+
+  searchCategory(){
   }
 
 }
