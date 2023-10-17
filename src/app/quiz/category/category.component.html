@@ -11,14 +11,17 @@
           formControlName="search"
         />
       </div>
+      <button type="submit" class="btn">Recherche</button>
+
     </form>
-    <button type="submit" class="btn">Recherche</button>
     <button (click)="reset()" class="btn">Annuler</button>
   </div>
 
   <ul class="list">
     <li *ngFor="let category of filteredCategories; let i = index" >
-      <span>{{ category?.name }}</span>
+        <button  class="btn--outline" (click)="getQuizzByCategory(category.id)">
+            {{category?.name}}
+        </button>
     </li>
   </ul>
 </section>
