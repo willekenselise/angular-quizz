@@ -1,13 +1,14 @@
 <h1>Les catégories</h1>
 
-<ul *ngFor="let category of categories; let i = index">
-  <li>{{category?.name}}</li>
-</ul>
-
 <form class="login_form" [formGroup]="searchForm" (ngSubmit)="search()">
-  <h2>Recherche</h2>
   <div class="login_form-container">
     <input type="text" placeholder="Rechercher une catégorie" class="input" formControlName="search" />
   </div>
-  <button class="btn">Recherche</button>
+  <button type="submit" class="btn">Recherche</button>
 </form>
+
+<button (click)="reset()" class="btn">Reset</button>
+
+<ul *ngFor="let category of filteredCategories; let i = index">
+  <li>{{category?.name}}</li>
+</ul>

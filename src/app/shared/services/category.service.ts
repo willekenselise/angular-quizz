@@ -17,8 +17,4 @@ export class CategoryService {
     });
   }
 
-
-  searchCategory(){
-  }
-
 }
