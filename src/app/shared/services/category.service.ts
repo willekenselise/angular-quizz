@@ -10,9 +10,9 @@ export class CategoryService {
   constructor(private http: HttpClient) { }
 
 
-  getQuizCategories() {
+  getCategories() {
     this.http.get('http://localhost:3000/categories').subscribe((cat: any) => {
-        console.log(cat);
+        this.categories.push(...cat);
     });
   }
 

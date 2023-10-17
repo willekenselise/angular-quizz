@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CategoryService } from 'src/app/shared/services/category.service';
 
 @Component({
   selector: 'app-category',
@@ -6,11 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./category.component.scss']
 })
 export class CategoryComponent {
-  categories: any[] = this.CategoryService.categories;
+  categories: any[] = this.categoryService.categories;
 
   constructor(private categoryService: CategoryService ) { }
 
   ngOnInit(): void {
-    this.CategoryService.getQuizContent();
+    this.categoryService.getCategories();
   }
 }
+
+
