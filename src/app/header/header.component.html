@@ -1,0 +1,12 @@
+<header class="header">
+  <h1 routerLink="/">
+    <button>Angular Quiz</button>
+  </h1>
+  <div class="header_user">
+    <h2>{{ getUsername }}</h2>
+    <button *ngIf="!isUserConnected; else logoutTemplate" class="btn-secondary" routerLink="/login">Se connecter</button>
+    <ng-template #logoutTemplate>
+      <button class="btn-secondary" (click)="logout()" routerLink="/login">Se déconnecter</button>
+    </ng-template>
+  </div>
+</header>

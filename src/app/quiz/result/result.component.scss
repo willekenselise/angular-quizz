@@ -1,0 +1,22 @@
+.result {
+  @apply flex flex-col items-center justify-center;
+
+  &_title {
+    @apply text-2xl font-bold text-center mb-4;
+  }
+
+  &_score {
+    @apply flex justify-center items-center my-4;
+
+    h3 {
+      @apply text-lg font-bold mr-1;
+    }
+    span {
+      @apply text-violet-500 text-4xl;
+    }
+  }
+
+  &_gif {
+    @apply my-8
+  }
+}

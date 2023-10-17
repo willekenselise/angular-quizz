@@ -1,0 +1,15 @@
+.header {
+  @apply bg-violet-500 text-white p-4 flex justify-between items-center;
+
+  h1 {
+    @apply text-2xl font-bold;
+  }
+
+  &_user {
+    @apply flex items-center;
+
+    h2 {
+      @apply text-lg font-bold mr-4;
+    }
+  }
+}

@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  @apply h-full w-full m-0 p-0 font-sans bg-white;
+}
+
+body {
+  @apply flex flex-col;
+}
+
+.btn {
+  @apply bg-violet-500 px-4 py-2 rounded shadow hover:bg-violet-700 text-white;
+  span {
+    @apply text-violet-200;
+  }
+
+  &--outline {
+    @apply px-4 py-2 rounded shadow border border-violet-500 text-violet-500 hover:bg-violet-500 hover:text-white;
+
+    span {
+      @apply text-violet-200;
+    }
+    &:disabled {
+      @apply cursor-not-allowed opacity-50;
+    }
+  }
+
+  &-secondary {
+    @apply bg-indigo-950 px-4 py-2 rounded shadow hover:bg-indigo-900 text-white;
+  }
+
+  &:disabled {
+    @apply cursor-not-allowed opacity-50;
+  }
+
+  &--icon {
+    @apply bg-violet-500 p-2.5 rounded-full hover:bg-violet-700 text-white w-10 h-10 flex items-center justify-center;
+  }
+}
+
+.input {
+  @apply border border-violet-500 px-4 py-2 rounded mr-2;
+}

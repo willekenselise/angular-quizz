@@ -1,0 +1,14 @@
+<section class="register">
+  <form class="register_form" [formGroup]="registerForm" (ngSubmit)="addUser()">
+    <h2>Inscription</h2>
+    <div class="register_form-container">
+      <input type="text" placeholder="Pseudo" class="input" formControlName="username" />
+      <input type="password" placeholder="Mot de passe" class="input" formControlName="password" />
+      <input type="password" placeholder="Confirmez le mot de passe" class="input" formControlName="confirmPassword" />
+      <p *ngIf="registerForm.invalid && (registerForm.touched || registerForm.dirty)" class="register_error">
+        {{ getErrorLabel }}
+      </p>
+    </div>
+    <button class="btn" [disabled]="registerForm.invalid">S'inscrire</button>
+  </form>
+</section>

@@ -1,0 +1,9 @@
+<section class="result">
+  <h2 class="result_title">Prêt à voir ton score ?</h2>
+  <section class="result_score">
+    <h3>{{ playerName }}, ton score est de :</h3>
+    <span>{{ score }}/{{ scoreTotal }}</span>
+  </section>
+  <button (click)="goToHome()" class="btn">Rejouer</button>
+  <img class="result_gif" [src]="getGifUrl()" alt="">
+</section>

@@ -1,0 +1,25 @@
+.home {
+  @apply flex flex-col items-center justify-center;
+
+  &_title {
+    @apply text-xl font-bold text-center mb-4;
+  }
+
+  &_presentation {
+    @apply text-center;
+  }
+
+  &_form {
+    @apply my-4 flex items-center;
+    label {
+      @apply mr-2 text-violet-500 font-bold;
+    }
+    input {
+      @apply border border-violet-500 px-4 py-2 rounded mr-2;
+    }
+  }
+
+  &_quiz-btn {
+    @apply my-8
+  }
+}

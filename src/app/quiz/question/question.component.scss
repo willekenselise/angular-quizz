@@ -1,0 +1,9 @@
+.question {
+  &_container {
+    @apply flex flex-col items-center my-4 p-12 bg-violet-100 rounded-lg w-full;
+  }
+
+  &_label {
+    @apply text-lg mb-6;
+  }
+}
