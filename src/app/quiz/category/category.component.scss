@@ -1,0 +1,38 @@
+.categories {
+  .title {
+    text-align: center;
+    font-size: 2em;
+    font-weight: 700;
+  }
+
+  .form {
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    .form-search {
+        display: flex;
+        align-items: center;
+    }
+
+  }
+
+  .list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin: 50px auto;
+
+    li{
+        border-radius: 8px;
+        padding: 24px 50px;
+        color: black;
+        background-color: lightgrey;
+    }
+  }
+}
