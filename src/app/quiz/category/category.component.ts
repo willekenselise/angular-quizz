@@ -3,23 +3,27 @@ import { CategoryService } from 'src/app/shared/services/category.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { QuizService } from 'src/app/shared/services/quiz.service';
 import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-category',
   templateUrl: './category.component.html',
   styleUrls: ['./category.component.scss'],
 })
+
 export class CategoryComponent {
   categories: any[] = this.categoryService.categories;
   filteredCategories: any[] = this.categoryService.categories;
   searchForm!: FormGroup;
   questionOfCategory: any[] = [];
+  playerName: string = 'non';
 
   constructor(
     private categoryService: CategoryService,
     private fb: FormBuilder,
     private quizService: QuizService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
@@ -27,8 +31,12 @@ export class CategoryComponent {
     this.searchForm = this.fb.group({
       search: [''],
     });
+
+    this.route.params.subscribe((params) => {
+      this.playerName = params['playerName'];
+    });
   }
-  
+
   search(): void {
     const { search } = this.searchForm.value;
     if (search) {
@@ -46,14 +54,11 @@ export class CategoryComponent {
   }
 
   reset(): void {
-    console.log(this.categories);
     this.filteredCategories = this.categories;
   }
+
   getQuizzByCategory(categoryId: number) {
     this.questionOfCategory = this.quizService.getQuizContent(categoryId);
-    console.log(this.questionOfCategory);
-    this.router.navigate(['/quiz'], {
-      queryParams: { idCategory: categoryId },
-    });
+    this.router.navigate(['/quiz', this.playerName, categoryId]);
   }
 }

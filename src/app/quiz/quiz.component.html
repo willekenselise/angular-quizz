@@ -5,7 +5,7 @@
     <button class="btn--outline">Reset</button>
   </section>
   <section class="quiz_questions-list">
-    <app-question></app-question>
+    <app-question [idCategory]="idCategory"></app-question>
   </section>
   <div class="quiz_validation">
     <button (click)="goToResultPage()" class="btn">Show score</button>
